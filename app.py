@@ -35,8 +35,8 @@ def vid_to_audio(url=None):
 
 def audio_to_text():
     import torch
-    import pygame
-    pygame.init()
+    
+    
     from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
     
 
