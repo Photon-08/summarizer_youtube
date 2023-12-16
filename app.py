@@ -99,7 +99,7 @@ def summarize():
     chunks = int(len_trans/512)
     from transformers import pipeline
 
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    summarizer = pipeline("summarization", model="philschmid/flan-t5-base-samsum")
 
     
     #print(summarizer(transcript, do_sample=False))
