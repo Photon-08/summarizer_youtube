@@ -96,7 +96,7 @@ def summarize():
     transcript = audio_to_text()
     from transformers import pipeline
 
-    summarizer = pipeline("summarization", model="philschmid/flan-t5-base-samsum")
+    summarizer = pipeline("summarization", model="pszemraj/long-t5-tglobal-base-16384-book-summary"")
 
     
     #print(summarizer(transcript, do_sample=False))
