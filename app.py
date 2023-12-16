@@ -64,11 +64,15 @@ def audio_to_text():
         device=device,
     )
     try:
-        files = glob.glob('*.mp3')[0]
-        current_path = os.getcwd()
-        file_path = os.path.join(current_path,files)
+        #files = glob.glob('*.mp3')[0]
+        files = os.listdir()
+        for i in files:
+            if ".mp3" in i:
+                file_path = i
+        #current_path = os.getcwd()
+        #file_path = os.path.join(current_path,files)
         result = pipe(file_path)
-        print(result["text"])
+        st.write(result["text"])
         return result["text"]
     except:
         print("No file")
