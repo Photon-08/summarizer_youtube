@@ -70,7 +70,7 @@ def audio_to_text():
     files = os.listdir()
     # Get a list of all files in the current directory
     files = os.listdir()
-    st.write(files)
+    #st.write(files)
 
     # Create an empty list to collect results
     results = []
@@ -110,6 +110,6 @@ if st.button("Start Summarization"):
     with st.status("Downloading the video..."):
         vid_to_audio(url=yt_link)
     with st.status("Summarizing..."):
-        s = audio_to_text()
+        s = summarize()
         st.write(s)
     
