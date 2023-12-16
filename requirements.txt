@@ -1,5 +1,4 @@
 pytube
-ffmpeg
 accelerate
 torch
 transformers
