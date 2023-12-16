@@ -87,7 +87,7 @@ def summarize():
 
 yt_link = st.text_input("Enter the YouTube URL: ")
 
-with st.button("Start Summarization"):
+if st.button("Start Summarization"):
     
     with st.status("Downloading the video..."):
         vid_to_audio()
