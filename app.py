@@ -78,7 +78,7 @@ def audio_to_text():
         return result["text"]
     except:
         print("No file")
-audio_to_text()
+
 
 def summarize():
     transcript = audio_to_text()
@@ -98,6 +98,6 @@ if st.button("Start Summarization"):
     with st.status("Downloading the video..."):
         vid_to_audio(url=yt_link)
     with st.status("Summarizing..."):
-        s = summarize()
-    st.write(s)
+        s = audio_to_text()
+        st.write(s)
     
