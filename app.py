@@ -85,7 +85,8 @@ def audio_to_text():
                 st.write("Current Directory:", os.getcwd())
                 st.write("File Path:", file_path)
                 f = open(file_path, 'rb')
-                result = pipe(file_path)
+                st.write(f.readlines())
+                result = pipe(i)
                 st.write(result["text"])
                 return result["text"]
     except:
