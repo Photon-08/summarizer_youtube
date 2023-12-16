@@ -40,7 +40,7 @@ def audio_to_text():
     from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
     
 
-    os.environ["PATH"] += os.pathsep + "/usr/bin/ffmpeg" 
+    os.environ["ffmpeg_location"] += os.pathsep + "/usr/bin/ffmpeg" 
 
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
