@@ -71,8 +71,9 @@ def audio_to_text():
                 file_path = os.getcwd() + "/" + i
                 st.write(os.getcwd())
                 st.write(file_path)
-        #current_path = os.getcwd()
-        #file_path = os.path.join(current_path,files)
+                current_path = os.getcwd()
+                file_path = os.path.join(current_path,i)
+                st.write(file_path)
         result = pipe(file_path)
         st.write(result["text"])
         return result["text"]
