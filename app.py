@@ -108,7 +108,7 @@ def summarize():
     for i in range(chunks):
         if i == 0:
             tran_text = transcript[:512]
-            inter_output = summarizer(tran_text, do_sample=False)[0][''summary_text']
+            inter_output = summarizer(tran_text, do_sample=False)[0]['summary_text']
             final_output += inter_output
             final_output += ' '
 
