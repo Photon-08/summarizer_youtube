@@ -66,15 +66,23 @@ def audio_to_text():
     try:
         #files = glob.glob('*.mp3')[0]
         files = os.listdir()
+        # Get a list of all files in the current directory
+        files = os.listdir()
+
+        # Create an empty list to collect results
+        results = []
+        
+        # Iterate through the files
         for i in files:
             if ".mp3" in i:
-                file_path = os.getcwd() + "/" + i
-                st.write(os.getcwd())
-                st.write(file_path)
-                current_path = os.getcwd()
-                file_path = os.path.join(current_path,i)
-                st.write(file_path)
-                result = pipe(i)
+                # Build the full path to the MP3 file
+                file_path = os.path.join(os.getcwd(), i)
+        
+                # Display information (optional)
+                st.write("Current Directory:", os.getcwd())
+                st.write("File Path:", file_path)
+
+                result = pipe(file_path)
                 st.write(result["text"])
                 return result["text"]
     except:
