@@ -1,0 +1,4 @@
+pytube
+ffmpeg
+accelerate
+torch
