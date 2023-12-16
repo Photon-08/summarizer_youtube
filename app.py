@@ -35,6 +35,8 @@ def vid_to_audio(url=None):
 
 def audio_to_text():
     import torch
+    import pygame
+    pygame.init()
     from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
     
 
@@ -81,7 +83,9 @@ def audio_to_text():
                 # Display information (optional)
                 st.write("Current Directory:", os.getcwd())
                 st.write("File Path:", file_path)
+                my_sound = pygame.mixer.Sound(file_path)
 
+                my_sound.play()
                 result = pipe(file_path)
                 st.write(result["text"])
                 return result["text"]
