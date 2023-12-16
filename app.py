@@ -87,7 +87,7 @@ def audio_to_text():
             
             
             result = pipe(file_path)
-            print(result)
+            #print(result)
             return result['text']
     
 
@@ -106,6 +106,7 @@ def summarize():
     cutoff = 512
     final_output = ''
     for i in range(chunks):
+        print(i)
         if i == 0:
             tran_text = transcript[:512]
             inter_output = summarizer(tran_text, do_sample=False)[0]['summary_text']
