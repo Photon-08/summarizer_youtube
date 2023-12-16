@@ -2,6 +2,5 @@ pytube
 accelerate
 torch
 transformers
-ffmpeg-python==0.2.0
 
 
