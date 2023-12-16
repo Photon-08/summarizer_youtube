@@ -3,3 +3,4 @@ ffmpeg
 accelerate
 torch
 transformers
+pygame
