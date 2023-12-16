@@ -65,32 +65,31 @@ def audio_to_text():
         torch_dtype=torch_dtype,
         device=device,
     )
-    try:
-        #files = glob.glob('*.mp3')[0]
-        files = os.listdir()
-        # Get a list of all files in the current directory
-        files = os.listdir()
-        st.write(files)
+    
+    #files = glob.glob('*.mp3')[0]
+    files = os.listdir()
+    # Get a list of all files in the current directory
+    files = os.listdir()
+    st.write(files)
 
-        # Create an empty list to collect results
-        results = []
-        
-        # Iterate through the files
-        for i in files:
-            if ".mp3" in i:
-                # Build the full path to the MP3 file
-                file_path = os.path.join(os.getcwd(), i)
-        
-                # Display information (optional)
-                st.write("Current Directory:", os.getcwd())
-                st.write("File Path:", file_path)
-                
-                
-                result = pipe(file_path)
-                print(result)
-                return result['text']
-    except:
-        print("No file")
+    # Create an empty list to collect results
+    results = []
+    
+    # Iterate through the files
+    for i in files:
+        if ".mp3" in i:
+            # Build the full path to the MP3 file
+            file_path = os.path.join(os.getcwd(), i)
+    
+            # Display information (optional)
+            st.write("Current Directory:", os.getcwd())
+            st.write("File Path:", file_path)
+            
+            
+            result = pipe(file_path)
+            print(result)
+            return result['text']
+    
 
 
 def summarize():
