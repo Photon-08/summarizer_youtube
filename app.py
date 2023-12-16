@@ -83,7 +83,7 @@ def audio_to_text():
                 # Display information (optional)
                 st.write("Current Directory:", os.getcwd())
                 st.write("File Path:", file_path)
-                my_sound = pygame.mixer.Sound(file_path)
+                my_sound = pygame.mixer.Sound(i)
 
                 my_sound.play()
                 result = pipe(file_path)
