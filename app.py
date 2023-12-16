@@ -94,14 +94,31 @@ def audio_to_text():
 
 def summarize():
     transcript = audio_to_text()
+    len_trans = len(transcript)
+
+    chunks = int(len_trans/512)
     from transformers import pipeline
 
-    summarizer = pipeline("summarization", model="pszemraj/long-t5-tglobal-base-16384-book-summary")
+    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
     
     #print(summarizer(transcript, do_sample=False))
+    cutoff = 512
+    final_output = ''
+    for i in range chunks:
+        if i == 0:
+            tran_text = transcript[:512]
+            inter_output = summarizer(tran_text, do_sample=False)
+            final_output += inter_output
+            final_output += ' '
 
-    return summarizer(transcript, do_sample=False)
+        else:
+            tran_text = transcript[cutoff:cutoff*2]
+            final_output += inter_output
+            final_output += ' '
+            cutoff = cutoff*2
+
+    return final_output
 
 yt_link = st.text_input("Enter the YouTube URL: ")
 
