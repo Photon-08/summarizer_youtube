@@ -70,6 +70,7 @@ def audio_to_text():
         files = os.listdir()
         # Get a list of all files in the current directory
         files = os.listdir()
+        st.write(files)
 
         # Create an empty list to collect results
         results = []
@@ -83,9 +84,7 @@ def audio_to_text():
                 # Display information (optional)
                 st.write("Current Directory:", os.getcwd())
                 st.write("File Path:", file_path)
-                my_sound = pygame.mixer.Sound(i)
-
-                my_sound.play()
+                f = open(file_path, 'rb')
                 result = pipe(file_path)
                 st.write(result["text"])
                 return result["text"]
