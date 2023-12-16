@@ -101,7 +101,7 @@ def summarize():
     
     #print(summarizer(transcript, do_sample=False))
 
-    return summarizer(transcript[:512], do_sample=False)
+    return summarizer(transcript, do_sample=False)
 
 yt_link = st.text_input("Enter the YouTube URL: ")
 
