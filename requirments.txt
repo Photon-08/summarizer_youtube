@@ -1,0 +1,6 @@
+pytube
+streamlit
+os_sys
+transformers
+ffmpeg
+accelerate
