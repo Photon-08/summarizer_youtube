@@ -105,7 +105,7 @@ def summarize():
     #print(summarizer(transcript, do_sample=False))
     cutoff = 512
     final_output = ''
-    for i in range chunks:
+    for i in range(chunks):
         if i == 0:
             tran_text = transcript[:512]
             inter_output = summarizer(tran_text, do_sample=False)
