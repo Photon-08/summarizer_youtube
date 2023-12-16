@@ -88,6 +88,7 @@ def audio_to_text():
                 
                 result = pipe(file_path)
                 print(result)
+                return result['text']
     except:
         print("No file")
 
