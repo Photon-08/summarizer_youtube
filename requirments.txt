@@ -4,4 +4,6 @@ os_sys
 transformers
 ffmpeg
 accelerate
-torch torchvision torchaudio
+torch 
+torchvision 
+torchaudio
