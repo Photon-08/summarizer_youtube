@@ -63,13 +63,15 @@ def audio_to_text():
         torch_dtype=torch_dtype,
         device=device,
     )
-
-    files = glob.glob('*.mp3')[0]
-    current_path = os.getcwd()
-    file_path = os.path.join(current_path,files)
-    result = pipe(file_path)
-    print(result["text"])
-    return result["text"]
+    try:
+        files = glob.glob('*.mp3')[0]
+        current_path = os.getcwd()
+        file_path = os.path.join(current_path,files)
+        result = pipe(file_path)
+        print(result["text"])
+        return result["text"]
+    except:
+        print("No file")
 audio_to_text()
 
 def summarize():
