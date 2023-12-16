@@ -74,9 +74,9 @@ def audio_to_text():
                 current_path = os.getcwd()
                 file_path = os.path.join(current_path,i)
                 st.write(file_path)
-        result = pipe(file_path)
-        st.write(result["text"])
-        return result["text"]
+                result = pipe(i)
+                st.write(result["text"])
+                return result["text"]
     except:
         print("No file")
 
