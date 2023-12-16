@@ -68,9 +68,9 @@ def audio_to_text():
         files = os.listdir()
         for i in files:
             if ".mp3" in i:
-                file_path = i
+                file_path = os.getcwd() + "/" + i
                 st.write(os.getcwd())
-                st.write(i)
+                st.write(file_path)
         #current_path = os.getcwd()
         #file_path = os.path.join(current_path,files)
         result = pipe(file_path)
