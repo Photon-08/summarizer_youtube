@@ -5,3 +5,4 @@ transformers
 ffmpeg
 accelerate
 torchvision
+torch ==1.10.0 
