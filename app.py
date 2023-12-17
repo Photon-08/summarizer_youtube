@@ -114,11 +114,12 @@ def summarize():
             final_output += ' '
 
         else:
-            tran_text = transcript[cutoff:cutoff*2]
+            #end_slice = cutoff + cutoff
+            tran_text = transcript[cutoff:cutoff + 2]
             inter_output = summarizer(tran_text, do_sample=False)[0]['summary_text']
             final_output += inter_output
             final_output += ' '
-            cutoff = cutoff*2
+            cutoff += cutoff
 
     return final_output
 
