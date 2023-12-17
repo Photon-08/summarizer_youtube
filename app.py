@@ -122,7 +122,7 @@ def summarize():
             final_output += ' '
             cutoff += cutoff
     """
-    final_output = summarizer(tran_text, do_sample=False)
+    final_output = summarizer(transcript, do_sample=False)
     return final_output
 
 yt_link = st.text_input("Enter the YouTube URL: ")
