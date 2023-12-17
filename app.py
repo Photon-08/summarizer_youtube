@@ -52,7 +52,7 @@ def audio_to_text():
     model.to(device)
 
     processor = AutoProcessor.from_pretrained(model_id)
-
+    #
     pipe = pipeline(
     "automatic-speech-recognition",
     model=model,
