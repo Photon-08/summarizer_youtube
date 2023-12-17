@@ -54,17 +54,16 @@ def audio_to_text():
     processor = AutoProcessor.from_pretrained(model_id)
 
     pipe = pipeline(
-        "automatic-speech-recognition",
-        model=model,
-        tokenizer=processor.tokenizer,
-        feature_extractor=processor.feature_extractor,
-        
-        max_length=tokenizer.model_max_length,
-        
-        batch_size=16,
-        
-        torch_dtype=torch_dtype,
-        device=device,
+    "automatic-speech-recognition",
+    model=model,
+    tokenizer=processor.tokenizer,
+    feature_extractor=processor.feature_extractor,
+    max_new_tokens=128,
+    chunk_length_s=30,
+    batch_size=16,
+
+    torch_dtype=torch_dtype,
+    device=device,
     )
     
     #files = glob.glob('*.mp3')[0]
