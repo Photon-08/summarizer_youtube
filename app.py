@@ -105,6 +105,7 @@ def summarize():
     #print(summarizer(transcript, do_sample=False))
     cutoff = 512
     final_output = ''
+    """
     for i in range(chunks):
         print(i)
         if i == 0:
@@ -120,7 +121,8 @@ def summarize():
             final_output += inter_output
             final_output += ' '
             cutoff += cutoff
-
+    """
+    final_output = summarizer(tran_text, do_sample=False)
     return final_output
 
 yt_link = st.text_input("Enter the YouTube URL: ")
